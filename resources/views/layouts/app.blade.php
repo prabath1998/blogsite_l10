@@ -32,12 +32,14 @@
     <!-- Text Header -->
     <header class="w-full container mx-auto">
         <div class="flex flex-col items-center py-12">
-            <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
-                {{ \App\Models\TextWidget::getTitle('header') }}
+            <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl px-4" href="{{ route('home') }}">
+                {{-- {{ \App\Models\TextWidget::getTitle('header') }} --}}
+                Tech Planet
             </a>
-            <p class="text-lg text-gray-600">
-                {{ \App\Models\TextWidget::getContent('header') }}
+            <p class="text-lg text-gray-600 px-4 text-center">
+                {{ \App\Models\TextWidget::getTitle('header') }}
             </p>
+
         </div>
     </header>
 
@@ -53,12 +55,11 @@
         <div :class="open ? 'block' : 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
             <div
                 class="w-full container mx-auto flex flex-col sm:flex-row items-center justify-center text-sm font-bold uppercase mt-0 px-6 py-2">
-                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Technology</a>
-                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Automotive</a>
-                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Finance</a>
-                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Politics</a>
-                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Culture</a>
-                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Sports</a>
+                <a href="{{ route('home') }}" class="hover:bg-blue-600 hover:text-white rounded py-2 px-4 mx-2">Home</a>
+                @foreach ($categories as $category)
+                <a href="{{ route('by-category',$category) }}" class="hover:bg-blue-600 hover:text-white rounded py-2 px-4 mx-2">{{ $category->title }}</a>
+                @endforeach
+                <a href="{{ route('about-us') }}" class="hover:bg-blue-600 hover:text-white rounded py-2 px-4 mx-2">About Us</a>
             </div>
         </div>
     </nav>
@@ -77,7 +78,7 @@
 
         <div class="w-full container mx-auto flex flex-col items-center">
 
-            <div class="uppercase py-6">&copy; myblog.com</div>
+            <div class="uppercase py-6">&copy; techplanet.com</div>
         </div>
     </footer>
 
