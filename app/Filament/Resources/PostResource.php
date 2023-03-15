@@ -49,7 +49,7 @@ class PostResource extends Resource
                         Forms\Components\Toggle::make('active')
                             ->required(),
                         Forms\Components\DateTimePicker::make('published_at')
-                            ->required(),
+
 
                     ])->columnSpan(8),
                 Card::make()
@@ -69,9 +69,8 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title'),
-
                 Tables\Columns\ImageColumn::make('thumbnail'),
+                Tables\Columns\TextColumn::make('title'),
 
                 Tables\Columns\IconColumn::make('active')
                     ->boolean(),
