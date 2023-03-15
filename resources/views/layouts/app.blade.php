@@ -17,6 +17,14 @@
         .font-family-karla {
             font-family: karla;
         }
+
+        pre {
+            padding: 1rem;
+            background-color: #1a202c;
+            color: white;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
     </style>
 
     <!-- AlpineJS -->
@@ -26,7 +34,7 @@
         integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-white font-family-karla">
+<body class="bg-gray-50 font-family-karla">
 
 
 
